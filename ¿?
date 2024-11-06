@@ -35,7 +35,7 @@ TitleLabel.Name = "TitleLabel"
 TitleLabel.Size = UDim2.new(1, 0, 0.1, 0)
 TitleLabel.Position = UDim2.new(0, 0, 0, 0)
 TitleLabel.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
-TitleLabel.Text = "Game Scripts"
+TitleLabel.Text = "Guerra de Torres"
 TitleLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 TitleLabel.Font = Enum.Font.SourceSansBold
 TitleLabel.TextSize = 22
@@ -58,7 +58,7 @@ MainActionsLabel.Name = "MainActionsLabel"
 MainActionsLabel.Size = UDim2.new(1, 0, 0.1, 0)
 MainActionsLabel.Position = UDim2.new(0, 0, 0.1, 0)
 MainActionsLabel.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
-MainActionsLabel.Text = "Main Actions"
+MainActionsLabel.Text = "By NbHp"
 MainActionsLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 MainActionsLabel.Font = Enum.Font.SourceSansBold
 MainActionsLabel.TextSize = 18
@@ -91,34 +91,34 @@ UIListLayout.Padding = UDim.new(0, 10)
     button.MouseButton1Click:Connect(callback)
 end
 
-createButton("Blue↑", function()
+createButton("🟦Blue↑", function()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0.535486162, 129.171097, 131.254303, 0.999990821, 8.86140317e-09, -0.00428165169, -9.02522146e-09, 1, -3.82410938e-08, 0.00428165169, 3.8279385e-08, 0.999990821)
 end)
 
-createButton("Blue↓", function()
+createButton("🟦Blue↓", function()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-0.0787663832, 24.7712269, 130.616409)
 end)
 
-createButton("Green↑", function()
+createButton("🟩Green↑", function()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0.355959862, 129.171112, -131.382202, -0.99999088, -6.17983318e-08, 0.00427358923, -6.1438783e-08, 1, 8.42652952e-08, -0.00427358923, 8.40019609e-08, -0.99999088)
 end)
 
-createButton("Green↓", function()
+createButton("🟩Green↓", function()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0.132375583, 24.7712078, -130.436935)
 end)
 
-createButton("Red↑", function()
+createButton("🟥Red↑", function()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-131.159805, 129.171097, -0.614198804, -0.00742581114, -1.54529438e-08, -0.999972403, 8.9391321e-09, 1, -1.55197526e-08, 0.999972403, -9.05413255e-09, -0.00742581114)
 end)
 
-createButton("Red↓", function()
+createButton("🟥Red↓", function()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-130.702972, 24.7712269, 0.160295069)
 end)
 
-createButton("Yellow↑", function()
+createButton("🟨Yellow↑", function()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(131.485214, 129.171097, -0.579994142, 0.151019022, -1.51530966e-08, 0.988530874, -4.50454785e-09, 1, 1.60170721e-08, -0.988530874, -6.87176716e-09, 0.151019022)
 end)
 
-createButton("Yellow↓", function()
+createButton("🟨Yellow↓", function()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(131.206711, 24.7712078, 0.0661430731)
 end)
