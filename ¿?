@@ -1,0 +1,124 @@
+local ScreenGui = Instance.new("ScreenGui")
+local MainFrame = Instance.new("Frame")
+local ToggleButton = Instance.new("TextButton")
+local TitleLabel = Instance.new("TextLabel")
+local CloseButton = Instance.new("TextButton")
+local MainActionsLabel = Instance.new("TextLabel")
+local ScrollingFrame = Instance.new("ScrollingFrame")
+local UIListLayout = Instance.new("UIListLayout")
+
+ScreenGui.Name = "GameScriptsUI"
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+MainFrame.Name = "MainFrame"
+MainFrame.Size = UDim2.new(0.4, 0, 0.6, 0)  -- Tama帽o ajustado
+MainFrame.Position = UDim2.new(0.3, 0, 0.3, 0)
+MainFrame.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+MainFrame.BorderSizePixel = 0
+MainFrame.Visible = false
+MainFrame.Parent = ScreenGui
+
+ToggleButton.Name = "ToggleButton"
+ToggleButton.Size = UDim2.new(0.1, 0, 0.05, 0)
+ToggleButton.Position = UDim2.new(0.45, 0, 0.1, 0)
+ToggleButton.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+ToggleButton.Text = "UI"
+ToggleButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+ToggleButton.Font = Enum.Font.SourceSans
+ToggleButton.TextSize = 16
+ToggleButton.Parent = ScreenGui
+ToggleButton.MouseButton1Click:Connect(function()
+    MainFrame.Visible = not MainFrame.Visible
+end)
+
+TitleLabel.Name = "TitleLabel"
+TitleLabel.Size = UDim2.new(1, 0, 0.1, 0)
+TitleLabel.Position = UDim2.new(0, 0, 0, 0)
+TitleLabel.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+TitleLabel.Text = "Game Scripts"
+TitleLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TitleLabel.Font = Enum.Font.SourceSansBold
+TitleLabel.TextSize = 22
+TitleLabel.Parent = MainFrame
+
+CloseButton.Name = "CloseButton"
+CloseButton.Size = UDim2.new(0.1, 0, 0.05, 0)
+CloseButton.Position = UDim2.new(0.9, 0, 0, 0)
+CloseButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+CloseButton.Text = "X"
+CloseButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+CloseButton.Font = Enum.Font.SourceSansBold
+CloseButton.TextSize = 16
+CloseButton.Parent = MainFrame
+CloseButton.MouseButton1Click:Connect(function()
+    MainFrame.Visible = false
+end)
+
+MainActionsLabel.Name = "MainActionsLabel"
+MainActionsLabel.Size = UDim2.new(1, 0, 0.1, 0)
+MainActionsLabel.Position = UDim2.new(0, 0, 0.1, 0)
+MainActionsLabel.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+MainActionsLabel.Text = "Main Actions"
+MainActionsLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+MainActionsLabel.Font = Enum.Font.SourceSansBold
+MainActionsLabel.TextSize = 18
+MainActionsLabel.Parent = MainFrame
+
+-- Scrolling Frame
+ScrollingFrame.Name = "ScrollingFrame"
+ScrollingFrame.Size = UDim2.new(1, 0, 0.75, 0)  -- Ajustado para ocupar menos espacio
+ScrollingFrame.Position = UDim2.new(0, 0, 0.2, 0)
+ScrollingFrame.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+ScrollingFrame.ScrollBarThickness = 10
+ScrollingFrame.Parent = MainFrame
+
+UIListLayout.Parent = ScrollingFrame
+UIListLayout.FillDirection = Enum.FillDirection.Vertical
+UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+UIListLayout.VerticalAlignment = Enum.VerticalAlignment.Top
+UIListLayout.Padding = UDim.new(0, 10)
+
+    local function createButton(name, callback)
+    local button = Instance.new("TextButton")
+    button.Size = UDim2.new(0.8, 0, 0.1, 0)
+    button.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
+    button.Text = name
+    button.TextColor3 = Color3.fromRGB(255, 255, 255)
+    button.Font = Enum.Font.SourceSans
+    button.TextSize = 14
+    button.Parent = ScrollingFrame
+
+    button.MouseButton1Click:Connect(callback)
+end
+
+createButton("Blue↑", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0.535486162, 129.171097, 131.254303, 0.999990821, 8.86140317e-09, -0.00428165169, -9.02522146e-09, 1, -3.82410938e-08, 0.00428165169, 3.8279385e-08, 0.999990821)
+end)
+
+createButton("Blue↓", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-0.0787663832, 24.7712269, 130.616409)
+end)
+
+createButton("Green↑", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0.355959862, 129.171112, -131.382202, -0.99999088, -6.17983318e-08, 0.00427358923, -6.1438783e-08, 1, 8.42652952e-08, -0.00427358923, 8.40019609e-08, -0.99999088)
+end)
+
+createButton("Green↓", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0.132375583, 24.7712078, -130.436935)
+end)
+
+createButton("Red↑", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-131.159805, 129.171097, -0.614198804, -0.00742581114, -1.54529438e-08, -0.999972403, 8.9391321e-09, 1, -1.55197526e-08, 0.999972403, -9.05413255e-09, -0.00742581114)
+end)
+
+createButton("Red↓", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-130.702972, 24.7712269, 0.160295069)
+end)
+
+createButton("Yellow↑", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(131.485214, 129.171097, -0.579994142, 0.151019022, -1.51530966e-08, 0.988530874, -4.50454785e-09, 1, 1.60170721e-08, -0.988530874, -6.87176716e-09, 0.151019022)
+end)
+
+createButton("Yellow↓", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(131.206711, 24.7712078, 0.0661430731)
+end)
